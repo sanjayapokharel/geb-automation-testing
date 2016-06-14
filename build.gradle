@@ -42,6 +42,18 @@ dependencies {
     }
 }
 
+sourceSets {
+    test {
+        groovy {
+            srcDir 'src/pages'
+            srcDir 'src/tests'
+        }
+        resources {
+            srcDir 'src/resources'
+        }
+    }
+}
+
 drivers.each { driver ->
     task "${driver}Test"(type: Test) {
         reports {
